@@ -1,24 +1,32 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import CarListing from "./pages/CarListing";
-import OrderPage from "./pages/OrderPage";
+import LandingPage from "./LandingPage.jsx";
+import CarListing from "./CarListing.jsx";
+import OrderPage from "./OrderPage.jsx";
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <nav className="flex gap-4 p-4 bg-gray-800 text-white">
-        <Link to="/">Home</Link>
-        <Link to="/listings">Car Listing</Link>
-        <Link to="/order">Order</Link>
+      {/* Navigation Bar */}
+      <nav className="flex justify-center space-x-8 bg-blue-600 text-white py-4 shadow-md">
+        <Link to="/" className="hover:underline text-lg font-medium">
+          Home
+        </Link>
+        <Link to="/listings" className="hover:underline text-lg font-medium">
+          Car Listings
+        </Link>
+        <Link to="/order" className="hover:underline text-lg font-medium">
+          Order
+        </Link>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/listings" element={<CarListing />} />
-        <Route path="/order" element={<OrderPage />} />
-      </Routes>
+      {/* Page Routes */}
+      <div className="p-8">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/listings" element={<CarListing />} />
+          <Route path="/order" element={<OrderPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
-
-export default App;
