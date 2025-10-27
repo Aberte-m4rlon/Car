@@ -3,19 +3,19 @@ import React, { useState } from "react";
 const cars = [
   {
     model: "Honda Civic",
-    image: "/images/honda.jpg", // ✅ Correct path for Vite/React
+    image: "/images/honda.jpg", 
     description: "Sleek, efficient, and reliable — perfect for city driving.",
     price: "$25,000",
   },
   {
     model: "Tesla Model S",
-    image: "/images/tesla.jpg",
+    image: "/images/Thoughts on this Tesla_.jpg",
     description: "Luxury electric sedan with cutting-edge technology.",
     price: "$89,000",
   },
   {
     model: "BMW M3",
-    image: "/images/bmw.jpg",
+    image: "/images/BMW.jpg",
     description: "Sporty performance combined with timeless design.",
     price: "$70,000",
   },
@@ -30,12 +30,10 @@ export default function CarListing() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 px-6 md:px-12">
-      {/* Title */}
       <h1 className="text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-8">
         Available Cars
       </h1>
 
-      {/* Search bar */}
       <div className="flex justify-center mb-10">
         <input
           type="text"
@@ -46,12 +44,11 @@ export default function CarListing() {
         />
       </div>
 
-      {/* Car cards */}
       <div className="grid gap-10 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center">
         {filteredCars.map((car, index) => (
           <div
             key={index}
-            className="bg-white/70 backdrop-blur-lg border border-gray-200 shadow-xl rounded-3xl overflow-hidden hover:scale-105 transition transform duration-300 w-full max-w-sm"
+            className="bg-white/70 backdrop-blur-lg border border-gray-200 shadow-xl rounded-3xl overflow-hidden hover:scale-130 transition transform duration-200 w-full max-w-sm"
           >
             <img
               src={car.image}
@@ -76,7 +73,6 @@ export default function CarListing() {
         ))}
       </div>
 
-      {/* No results */}
       {filteredCars.length === 0 && (
         <p className="text-center text-gray-500 text-lg mt-10">
           No cars found. Try another model.
