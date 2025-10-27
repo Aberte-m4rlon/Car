@@ -48,7 +48,7 @@ export default function CarListing() {
         {filteredCars.map((car, index) => (
           <div
             key={index}
-            className="bg-white/70 backdrop-blur-lg border border-gray-200 shadow-xl rounded-3xl overflow-hidden hover:scale-130 transition transform duration-200 w-full max-w-sm"
+            className="bg-white/70 backdrop-blur-lg border border-gray-200 shadow-xl rounded-3xl overflow-hidden hover:scale-110 transition transform duration-200 w-full max-w-sm"
           >
             <img
               src={car.image}
